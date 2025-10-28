@@ -3,481 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Try Out Anda</title>
-    
+    <title>Try Out Gratis - Uji Kesiapanmu Sekarang!</title>
     <!-- Memuat Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Memuat Font Inter (yang sering dipakai untuk tampilan elegan/modern) --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script>
-        // Konfigurasi custom untuk Tailwind (opsional, tapi bagus untuk set font)
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                    },
-                },
-            },
-        };
-    </script>
+    <!-- Memuat font Inter dari Google Fonts --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 1. Menambahkan Script Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
-        /* Menerapkan font default ke body */
+        /* Menerapkan font Inter sebagai font utama */
         body {
             font-family: 'Inter', sans-serif;
-            /* Mengganti background body menjadi gradien oranye lembut */
-            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-            --tw-gradient-from: #FFF7ED; /* orange-50 */
-            --tw-gradient-to: #FFEDD5; /* orange-100 */
         }
-        /* Efek hover halus pada baris tabel */
-        tbody tr:hover {
-            background-color: #fcf8f5; /* sedikit lebih terang dari orange-50 untuk hover */
+        /* Efek gradien halus untuk hero section dengan nuansa oranye */
+        .hero-gradient {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); /* Orange muda ke oranye lebih terang */
         }
     </style>
 </head>
-<!-- Hapus padding 'p-4 md:p-8' dari body -->
-<body class="min-h-screen"> 
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- ===== HEADER STICKY BARU (Permintaan User) ===== -->
-    <!-- Ini adalah header yang akan menempel di atas -->
-    <div class="sticky top-0 z-40 bg-white shadow-md">
-        <!-- Konten header tetap di-tengah (max-w-4xl) dan diberi padding -->
-        <div class="max-w-4xl mx-auto flex justify-between items-center py-4 px-4 md:px-8">
-            <!-- Nama Lembaga -->
-            <span class="text-xl font-bold text-orange-800">Bakat by YEC.CO.ID</span>
-            
-            <div>
-                <!-- Ini akan muncul SETELAH submit -->
-                <span id="userNameDisplay" class="hidden font-semibold text-orange-800"></span>
-                
-                <!-- Ini akan hilang SETELAH submit -->
-                <!-- Mengubah rounded-full menjadi rounded-lg -->
-                <button id="loginBtn" type="button" class="bg-orange-500 hover:bg-orange-700 text-white font-medium py-2 px-5 rounded-lg transition duration-300 shadow-sm">
-                    Login
-                </button>
+    <!-- ===== Header / Navigasi ===== --><header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo (Teks) --><div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-orange-600">
+                        Bakat by YEC.CO.ID
+                    </a>
+                </div>
+                <!-- Tombol Navigasi Kanan --><div class="flex items-center">
+                    <a href="#fitur" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium hidden sm:block">Fitur</a>
+                    <a href="#testimoni" class="text-gray-600 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium hidden sm:block">Testimoni</a>
+                    <a href="#" class="ml-4 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-orange-700 bg-orange-100 hover:bg-orange-200">
+                        Login
+                    </a>
+                </div>
             </div>
-        </div>
-    </div>
-    <!-- ===== AKHIR HEADER STICKY BARU ===== -->
+        </nav>
+    </header>
 
-<!-- Tambahkan padding 'p-4 md:p-8' ke wrapper konten utama di bawah ini -->
-<!-- Saya ganti 'p-4 md:p-8' menjadi 'px-4 md:px-8 pt-4 pb-8' untuk mengurangi padding atas -->
-<div class="max-w-4xl mx-auto px-4 md:px-8 pt-4 pb-8">
-
-        <!-- ===== HEADER BARU (Permintaan User) - SUDAH DIPINDAH KE ATAS ===== -->
-        <!-- <div class="mb-6 flex justify-between items-center"> ... </div> -->
-        <!-- ===== AKHIR HEADER BARU ===== -->
-
-
-        <!-- 1. Header Halaman --><header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold text-orange-800">Hasil Try Out Selesai!</h1>
-            <p class="text-gray-700 mt-2 text-lg">Terima kasih telah menyelesaikan Latihan Tes</p> <!-- Warna teks disesuaikan agar terbaca di background oranye --></header>
-
-        <!-- 2. Kartu Hasil Utama Peserta --><div class="bg-orange-50 rounded-xl shadow-lg p-6 md:p-8 mb-8 overflow-hidden">
-            
-            <!-- Konten sekarang di-stack dan di-tengah --><div class="max-w-2xl mx-auto text-center">
-                
-                <!-- Bagian Skor (Tetap di Atas) --><div>
-                    <h2 class="text-2xl font-semibold text-gray-800">Selamat, NAWANG PUTRI !</h2> <!-- Warna teks disesuaikan --><p class="text-gray-600 mb-5">Ini adalah hasil pencapaian Anda:</p> <!-- Warna teks disesuaikan --><!-- Box Skor Utama --><div class="bg-orange-600 text-white rounded-lg p-6 inline-block shadow-lg">
-                        <p class="text-sm uppercase tracking-wider font-medium">Skor Total Anda</p>
-                        <!-- Ganti "80" dengan skor dinamis dari database Anda --><p class="text-6xl font-bold">80</p>
+    <!-- ===== Main Content ===== --><main>
+        <!-- ===== Hero Section ===== --><section class="hero-gradient">
+            <!-- Mengurangi padding atas (pt-20 -> pt-12) dan (md:pt-28 -> md:pt-16) -->
+            <!-- Juga mengurangi padding bawah agar proporsional (pb-24 -> pb-16) dan (md:pb-32 -> md:pb-20) -->
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-16 md:pb-20">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    
+                    <!-- Kolom Teks (Kiri) --><div class="md:w-1/2 text-center md:text-left">
+                        <span class="inline-block px-3 py-1 text-sm font-semibold text-orange-800 bg-orange-100 rounded-full mb-4">
+                            PERSIAPAN UJIAN #1
+                        </span>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
+                            Siap Taklukkan Ujian?
+                            <span class="block text-orange-600">Ukur Kesiapanmu di Sini.</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+                            Dapatkan pengalaman tes yang realistis, lengkap dengan analisis skor instan dan pembahasan mendalam. Semuanya gratis!
+                        </p>
+                        
+                        <!-- Tombol CTA Utama --><div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#mulai-tes" id="startButton" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-orange-600 hover:bg-orange-700 shadow-lg transform transition-transform hover:scale-105">
+                                Mulai Tes Gratis Sekarang
+                                <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4">Tanpa biaya, tanpa syarat tersembunyi.</p>
                     </div>
 
-                    <!-- Rincian Skor (TWK/TIU/TKP) telah dihapus sesuai permintaan --></div>
+                    <!-- Kolom Gambar (Kanan) --><div class="md:w-1/2 w-full max-w-md mx-auto md:max-w-none">
+                        <img src="https://placehold.co/600x500/ffedd5/f97316?text=Ilustrasi+Try+Out" 
+                             alt="Ilustrasi siswa sedang mengerjakan tes online" 
+                             class="rounded-lg shadow-2xl object-cover w-full h-full">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- TAMBAHAN: Jawaban Benar & Salah --><div class="grid grid-cols-2 gap-4 text-center mt-6">
-                        <div>
-                            <div class="bg-green-50 rounded-lg p-4 h-full flex flex-col justify-center border border-green-200">
-                                <p class="text-xs text-green-700 uppercase font-medium">Jawaban Benar</p>
-                                <!-- Ganti "75" dengan data dinamis --><p class="text-2xl md:text-3xl font-bold text-green-600">75</p>
+        <!-- ===== Bagian Fitur Unggulan (Kenapa Kami?) ===== --><section id="fitur" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                        Kenapa Memilih Try Out Kami?
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        Kami menyediakan fitur terbaik untuk membantumu lolos seleksi.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Fitur 1: Soal Berkualitas --><div class="text-center p-8 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <!-- 3. Mengganti SVG dengan Lottie Player -->
+                        <!-- Container ikon diperbesar menjadi h-32 w-32 (128px) agar animasi muat -->
+                        <div class="flex items-center justify-center h-32 w-32 mx-auto mb-5">
+                            <lottie-player 
+                                src="https://lottie.host/a3b7a5e8-5b12-4c12-9b23-0b1f237f3a7a/fS5ILzYR4R.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="w-full h-full" 
+                                hover> <!-- 'hover' berarti animasi main saat kursor di atasnya -->
+                            </lottie-player>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Soal Standar Ujian Asli</h3>
+                        <p class="text-gray-600 text-base">
+                            Dibuat oleh para ahli di bidangnya, soal kami dirancang semirip mungkin dengan tes yang sesungguhnya.
+                        </p>
+                    </div>
+
+                    <!-- Fitur 2: Analisis Instan --><div class="text-center p-8 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <!-- 3. Mengganti SVG dengan Lottie Player -->
+                        <div class="flex items-center justify-center h-32 w-32 mx-auto mb-5">
+                            <lottie-player 
+                                src="https://lottie.host/e2d08a6e-4b40-4f51-8a9d-1b1579b18349/Nknx3j8yP3.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="w-full h-full" 
+                                hover>
+                            </lottie-player>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Penilaian & Analisis Instan</h3>
+                        <p class="text-gray-600 text-base">
+                            Tak perlu menunggu lama. Lihat skormu, jawaban benar/salah, dan analisis kemampuan langsung setelah tes selesai.
+                        </p>
+                    </div>
+
+                    <!-- Fitur 3: Pembahasan Lengkap --><div class="text-center p-8 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <!-- 3. Mengganti SVG dengan Lottie Player -->
+                        <div class="flex items-center justify-center h-32 w-32 mx-auto mb-5">
+                            <lottie-player 
+                                src="https://lottie.host/8e2f4f20-9a1b-4f9b-81f7-e2a632c0d5b7/N085dYxU7K.json" 
+                                background="transparent" 
+                                speed="1" 
+                                class="w-full h-full" 
+                                hover>
+                            </lottie-player>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Pembahasan Mendalam</h3>
+                        <p class="text-gray-600 text-base">
+                            Pahami letak kesalahanmu dengan pembahasan soal yang jelas, lengkap, dan mudah dimengerti.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Bagian Testimoni (Social Proof) ===== --><section id="testimoni" class="py-20 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
+                        Apa Kata Mereka yang Sudah Mencoba?
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimoni 1 --><div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-gray-600 italic mb-4">"Try out gratisnya benar-benar membantu! Soalnya mirip banget sama aslinya dan pembahasannya gampang dimengerti. Skor saya jadi meningkat."</p>
+                        <div class="flex items-center">
+                            <img class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40/ffedd5/f97316?text=R" alt="Avatar Rina">
+                            <div>
+                                <p class="font-semibold text-gray-900">Prahoro Yudo.</p>
+                                <p class="text-sm text-gray-500">Pejuang PTN</p>
                             </div>
                         </div>
-                        <div>
-                            <div class="bg-red-50 rounded-lg p-4 h-full flex flex-col justify-center border border-red-200">
-                                <p class="text-xs text-red-700 uppercase font-medium">Jawaban Salah</p>
-                                <!-- Ganti "25" dengan data dinamis --><p class="text-2xl md:text-3xl font-bold text-red-600">25</p>
+                    </div>
+                    <!-- Testimoni 2 --><div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-gray-600 italic mb-4">"Analisis skornya instan, jadi saya bisa langsung tahu kelemahan saya di materi apa. Keren banget, dan ini gratis!"</p>
+                        <div class="flex items-center">
+                            <img class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40/ffedd5/f97316?text=B" alt="Avatar Budi">
+                            <div>
+                                <p class="font-semibold text-gray-900">Bayu Krisna.</p>
+                                <p class="text-sm text-gray-500">Calon ASN</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- TAMBAHAN: Pembahasan (Blur) --><div class="mt-6 text-center">
-                        <h4 class="text-base font-semibold text-orange-700 mb-2">Lihat Detail Pembahasan Tes Kamu:</h4> <!-- Warna teks disesuaikan --><!-- Link ini bisa diarahkan ke halaman upgrade/pembelian --><!-- MENAMBAHKAN ID "openModalPembahasan" --><a href="#" id="openModalPembahasan" class="block p-4 rounded-lg bg-gray-50 border border-gray-200 relative overflow-hidden group" title="Buka Pembahasan Lengkap (Fitur Premium)">
-                            
-                            <!-- Konten yang diblur --><!-- MENAMBAHKAN ID "pembahasanKonten" --><div id="pembahasanKonten" class="blur-sm select-none pointer-events-none">
-                                <p class="font-medium text-gray-600">Analisis Soal TWK</p> <!-- Warna teks disesuaikan --><p class="text-sm text-gray-500">Penerapan Pancasila, Sejarah Perjuangan...</p> <!-- Warna teks disesuaikan --><hr class="my-2 border-gray-200">
-                                <p class="font-medium text-gray-600">Analisis Soal TIU</p> <!-- Warna teks disesuaikan --><p class="text-sm text-gray-500">Logika Aritmatika, Kemampuan Verbal...</p> <!-- Warna teks disesuaikan --></div>
-                            
-                            <!-- Overlay "Terkunci" --><!-- MENAMBAHKAN ID "pembahasanLock" --><div id="pembahasanLock" class="absolute inset-0 bg-gradient-to-t from-gray-50/50 via-gray-50/80 to-gray-50/50 flex items-center justify-center">
-                                <span class="text-sm font-semibold text-gray-900 bg-yellow-300 px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                                    <!-- Ikon Gembok (dari Heroicons) --><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                    </svg>
-                                    Buka Pembahasan Lengkap
-                                </span>
+                    <!-- Testimoni 3 --><div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-gray-600 italic mb-4">"Platformnya elegan dan mudah dipakai. Nggak ada iklan yang mengganggu. Sangat fokus untuk belajar. Terima kasih!"</p>
+                        <div class="flex items-center">
+                            <img class="w-10 h-10 rounded-full mr-4" src="https://placehold.co/40x40/ffedd5/f97316?text=A" alt="Avatar Anita">
+                            <div>
+                                <p class="font-semibold text-gray-900">Nawang Putri.</p>
+                                <p class="text-sm text-gray-500">Siswa SMA</p>
                             </div>
-                        </a>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <p class="text-sm text-gray-600 mt-6 text-center">*Peringkat dapat berubah seiring bertambahnya peserta.</p> <!-- Warna teks disesuaikan --></div>
-
-            </div> <!-- Penutup .max-w-2xl .mx-auto .text-center --></div>
-
-        <!-- 3. Peringkat Umum (Leaderboard) --><div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
-            <h2 class="text-2xl font-bold text-orange-800 mb-6 text-center">Peringkat Umum Peserta</h2>
-            
-            <!-- Tombol Filter --><!-- Anda bisa menambahkan Javascript untuk mengubah data tabel berdasarkan filter ini --><div class="flex justify-center flex-wrap gap-2 mb-6">
-                <!-- MENAMBAHKAN ID "filterNasional" --><button id="filterNasional" class="bg-orange-600 text-white py-2 px-4 rounded-full text-sm font-medium transition duration-300">Nasional</button>
-                
-                <!-- MENGUBAH TOMBOL PROVINSI MENJADI TERKUNCI & MENAMBAHKAN ID --><button id="openModalProvinsi" type="button" class="bg-gray-100 text-gray-500 py-2 px-4 rounded-full text-sm font-medium hover:bg-gray-200 transition duration-300 flex items-center gap-1.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        <!-- ===== Final CTA (Call to Action) ===== --><section id="mulai-tes" class="bg-orange-700">
+            <div class="max-w-4xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    <span class="block">Masih Ragu?</span>
+                    <span class="block">Coba Saja Dulu, Gratis!</span>
+                </h2>
+                <p class="mt-4 text-lg leading-6 text-orange-100">
+                    Tidak ada ruginya mencoba. Dapatkan gambaran nyata kemampuanmu hanya dalam beberapa klik.
+                </p>
+                <a href="#mulai-tes" id="startButton2" class="mt-8 w-full inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-orange-600 bg-white hover:bg-orange-50 sm:w-auto transform transition-transform hover:scale-105 shadow-lg">
+                    Ambil Tes Gratis Saya
+                    <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
-                    Provinsi
-                </button>
-                
-                <!-- MENGUBAH TOMBOL KAB/KOTA MENJADI TERKUNCI & MENAMBAHKAN ID --><button id="openModalKabKota" type="button" class="bg-gray-100 text-gray-500 py-2 px-4 rounded-full text-sm font-medium hover:bg-gray-200 transition duration-300 flex items-center gap-1.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                    Kab/Kota
-                </button>
+                </a>
             </div>
+        </section>
+    </main>
 
-            <!-- Tabel Peringkat --><div class="overflow-x-auto">
-                <table class="w-full min-w-max text-left">
-                    <thead>
-                        <!-- Header Tabel --><tr class="border-b border-gray-200">
-                            <th class="p-4 text-sm font-semibold text-orange-700 uppercase">Peringkat</th> <!-- Warna teks disesuaikan --><th class="p-4 text-sm font-semibold text-orange-700 uppercase">Nama</th> <!-- Warna teks disesuaikan --><th class="p-4 text-sm font-semibold text-orange-700 uppercase text-right">Skor</th> <!-- Warna teks disesuaikan --></tr>
-                    </thead>
-                    <!-- MENAMBAHKAN ID PADA TBODY -->
-                    <tbody id="peringkatTbody">
-                        <!-- Data Peserta (Contoh) --><!-- Baris 1 --><tr class="border-b border-gray-100">
-                            <td class="p-4 text-gray-800 font-medium">#1</td> <!-- Warna teks disesuaikan --><td class="p-4 text-gray-800">MuhXXXXX BaXXXX</td> <!-- Warna teks disesuaikan --><td class="p-4 font-bold text-gray-900 text-right">95</td> <!-- Warna teks disesuaikan --></tr>
-                        
-                        <!-- Baris 2 --><tr class="border-b border-gray-100">
-                            <td class="p-4 text-gray-800 font-medium">#2</td> <!-- Warna teks disesuaikan --><td class="p-4 text-gray-800">AniXXXX SuXXXX</td> <!-- Warna teks disesuaikan --><td class="p-4 font-bold text-gray-900 text-right">92</td> <!-- Warna teks disesuaikan --></tr>
+    <!-- ===== Footer ===== --><footer class="bg-white border-t border-gray-200">
+        <div class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-base text-gray-500">
+                &copy; 2025 Bakat. Semua Hak Cipta Dilindungi.
+            </p>
+            <!-- Opsional: Tambahkan link media sosial jika ada --></div>
+    </footer>
 
-                        <!-- Baris 3 (Contoh Kab/Kota) --><tr class="border-b border-gray-100">
-                            <td class="p-4 text-gray-800 font-medium">#3</td> <!-- Warna teks disesuaikan --><td class="p-4 text-gray-800">BimXXXXX PrXXXX</td> <!-- Warna teks disesuaikan --><td class="p-4 font-bold text-gray-900 text-right">90</td> <!-- Warna teks disesuaikan --></tr>
-
-                        <!-- Baris Peserta Saat Ini (highlight) --><!-- Anda harus menambahkan logika untuk menampilkan baris ini --><tr class="border-b border-gray-100 bg-orange-50">
-                            <td class="p-4 text-orange-700 font-medium">#120</td>
-                            <td class="p-4 text-orange-700 font-medium">(Nama Peserta Anda)</td>
-                            <td class="p-4 font-bold text-orange-700 text-right">80</td>
-                        </tr>
-                        
-                        <!-- Baris Lainnya... --><tr class="border-b border-gray-100">
-                            <td class="p-4 text-gray-800 font-medium">#121</td> <!-- Warna teks disesuaikan --><td class="p-4 text-gray-800">EkoXXXXX SaXXXX</td> <!-- Warna teks disesuaikan --><td class="p-4 font-bold text-gray-900 text-right">79</td> <!-- Warna teks disesuaikan --></tr>
-                         <tr class="border-b border-gray-100">
-                            <td class="p-4 text-gray-800 font-medium">#122</td> <!-- Warna teks disesuaikan --><td class="p-4 text-gray-800">FitXXXXX NuXXXX</td> <!-- Warna teks disesuaikan --><td class="p-4 font-bold text-gray-900 text-right">78</td> <!-- Warna teks disesuaikan --></tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <!-- Navigasi Halaman (Pagination) --><div class="flex justify-center mt-8">
-                <nav class="flex rounded-md shadow-sm" aria-label="Pagination">
-                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-600 hover:bg-gray-50"> <!-- Dikembalikan ke border abu-abu -->&laquo;
-                    </a>
-                    <a href="#" aria-current="page" class="relative z-10 inline-flex items-center px-4 py-2 border border-orange-600 bg-orange-50 text-sm font-medium text-orange-600">1</a>
-                    <a href="#" class="relative inline-flex items-center px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">2</a>
-                    <a href="#" class="relative inline-flex items-center px-4 py-2 border-t border-b border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">3</a>
-                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-600 hover:bg-gray-50"> <!-- Dikembalikan ke border abu-abu -->&raquo;
-                    </a>
-                </nav>
-            </div>
-        </div>
-        
-        <!-- 4. CTA (Call to Action) & Footer --><footer class="text-center mt-10 pb-6">
-            <p class="text-orange-800 mb-4 text-lg">Siap untuk tantangan berikutnya?</p> <!-- Warna teks disesuaikan --><!-- Tombol CTA bisa diarahkan ke paket premium atau try out lainnya --><a href="#" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
-                Lihat Paket Try Out Premium
-            </a>
-            <p class="text-sm text-gray-600 mt-8">&copy; 2025 (Nama Jasa Try Out Anda). Semua hak cipta dilindungi.</p> <!-- Warna teks disesuaikan --></footer>
-
-    </div>
-
-    <!-- ====================================================== -->
-    <!-- MODAL POP-UP UNTUK PENGISIAN DATA DIRI (LEADS)          -->
-    <!-- ====================================================== -->
-    <div id="leadsModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-        <!-- Overlay -->
-        <div id="modalOverlay" class="absolute inset-0 bg-gray-900 bg-opacity-75"></div>
-        
-        <!-- Konten Modal -->
-        <div class="bg-white rounded-lg shadow-xl w-full max-w-lg p-6 md:p-8 z-10 relative">
-            
-            <!-- Tombol Close (X) -->
-            <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    <!-- ===== Modal Notifikasi (Pengganti alert) ===== --><div id="messageBox" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-sm w-full p-6 text-center transform transition-all scale-95 opacity-0" id="messageBoxContent">
+            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-orange-100 text-orange-600 mx-auto mb-4">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
                 </svg>
+            </div>
+            <h3 class="text-lg font-medium text-gray-900 mb-2">Mempersiapkan Halaman Tes...</h3>
+            <p class="text-sm text-gray-600 mb-6">
+                Anda akan segera diarahkan ke halaman tes. Selamat mengerjakan!
+            </p>
+            <button id="closeButton" class="w-full px-4 py-2 bg-orange-600 text-white rounded-lg font-medium hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                Tutup
             </button>
-
-            <h3 class="text-2xl font-bold text-orange-800 mb-3">Selangkah Lagi, NAWANG PUTRI!</h3>
-            <p class="text-gray-700 mb-6">Dapatkan Akses Penuh! Cukup isi data di bawah untuk membuka <strong class="text-gray-900">Pembahasan Soal</strong> dan melihat <strong class="text-gray-900">Peringkat real-time</strong> di Provinsi serta Kabupaten/Kota kamu.</p>
-            
-            <form id="leadsForm" class="space-y-4">
-                <div>
-                    <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
-                    <input type="text" id="nama" name="nama" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" placeholder="Nama Anda">
-                </div>
-                
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" placeholder="email@anda.com">
-                </div>
-
-                <div>
-                    <label for="no_wa" class="block text-sm font-medium text-gray-700">No. WhatsApp</label>
-                    <input type="tel" id="no_wa" name="no_wa" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm" placeholder="0812xxxxxxxx">
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="provinsi" class="block text-sm font-medium text-gray-700">Provinsi</label>
-                        <select id="provinsi" name="provinsi" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
-                            <option value="">Pilih Provinsi</option>
-                            <!-- Anda perlu mengisi ini dengan data provinsi -->
-                            <option value="Jawa Barat">Jawa Barat</option>
-                            <option value="DKI Jakarta">DKI Jakarta</option>
-                            <option value="Jawa Tengah">Jawa Tengah</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="kabupaten" class="block text-sm font-medium text-gray-700">Kabupaten/Kota</label>
-                        <select id="kabupaten" name="kabupaten" required class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm">
-                            <option value="">Pilih Kab/Kota</option>
-                            <!-- Anda perlu mengisi ini secara dinamis berdasarkan provinsi -->
-                            <option value="Bandung">Bandung</option>
-                            <option value="Jakarta Selatan">Jakarta Selatan</option>
-                            <option value="Semarang">Semarang</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="pt-2">
-                    <!-- MENAMBAHKAN ID "submitLeadsBtn" dan class "disabled" --><button type="submit" id="submitLeadsBtn" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-300">
-                        Kirim Data & Buka Fitur
-                    </button>
-                </div>
-            </form>
         </div>
     </div>
 
-    <!-- ====================================================== -->
-    <!-- JAVASCRIPT UNTUK MODAL                                 -->
-    <!-- ====================================================== -->
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('leadsModal');
-            const modalOverlay = document.getElementById('modalOverlay');
-            const closeModalBtn = document.getElementById('closeModalBtn');
-            const leadsForm = document.getElementById('leadsForm');
+        // --- Skrip untuk Modal (Pengganti Alert) ---
 
-            // --- Variabel Global untuk menyimpan data user ---
-            let userProvinsi = '';
-            let userKabupaten = '';
-            let userNama = ''; // <-- DITAMBAHKAN
-            let isDataSubmitted = false;
+        // Ambil elemen-elemen yang dibutuhkan
+        const startButton = document.getElementById('startButton');
+        const startButton2 = document.getElementById('startButton2');
+        const closeButton = document.getElementById('closeButton');
+        const messageBox = document.getElementById('messageBox');
+        const messageBoxContent = document.getElementById('messageBoxContent');
 
-            // --- Elemen yang akan di-unlock ---
-            const triggerPembahasan = document.getElementById('openModalPembahasan');
-            const pembahasanKonten = document.getElementById('pembahasanKonten');
-            const pembahasanLock = document.getElementById('pembahasanLock');
-            
-            const triggerProvinsi = document.getElementById('openModalProvinsi');
-            const triggerKabKota = document.getElementById('openModalKabKota');
-            const filterNasional = document.getElementById('filterNasional');
-            const peringkatTbody = document.getElementById('peringkatTbody');
+        // Fungsi untuk menampilkan modal
+        function showModal(e) {
+            e.preventDefault(); // Mencegah link # pindah halaman
+            messageBox.classList.remove('hidden');
+            // Memicu transisi
+            setTimeout(() => {
+                messageBox.classList.add('opacity-100');
+                messageBoxContent.classList.add('scale-100', 'opacity-100');
+            }, 10); // delay kecil untuk memastikan transisi CSS berjalan
+        }
 
-            const loginBtn = document.getElementById('loginBtn'); // <-- DITAMBAHKAN
-            const userNameDisplay = document.getElementById('userNameDisplay'); // <-- DITAMBAHKAN
+        // Fungsi untuk menyembunyikan modal
+        function hideModal() {
+            messageBoxContent.classList.remove('scale-100', 'opacity-100');
+            messageBox.classList.remove('opacity-100');
+            // Tunggu transisi selesai baru disembunyikan
+            setTimeout(() => {
+                messageBox.classList.add('hidden');
+                // Di sini Anda bisa menambahkan logika untuk benar-benar pindah halaman,
+                // misalnya: window.location.href = 'halaman-tes.html';
+            }, 300); 
+        }
 
-            const filterButtons = [filterNasional, triggerProvinsi, triggerKabKota];
+        // Tambahkan event listener ke tombol-tombol
+        startButton.addEventListener('click', showModal);
+        startButton2.addEventListener('click', showModal);
+        closeButton.addEventListener('click', hideModal);
 
-            // --- VALIDASI FORM ---
-            const submitBtn = document.getElementById('submitLeadsBtn');
-            const inputNama = document.getElementById('nama');
-            const inputEmail = document.getElementById('email');
-            const inputWa = document.getElementById('no_wa');
-            const inputProvinsi = document.getElementById('provinsi');
-            const inputKabupaten = document.getElementById('kabupaten');
-            
-            const formInputs = [inputNama, inputEmail, inputWa, inputProvinsi, inputKabupaten];
-
-            const checkFormValidity = () => {
-                // Cek apakah SEMUA field punya value (tidak kosong)
-                const allFilled = formInputs.every(input => input.value.trim() !== '');
-                
-                if (allFilled) {
-                    // Jika semua terisi, AKTIFKAN tombol
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('bg-gray-400', 'cursor-not-allowed', 'hover:bg-gray-400');
-                    submitBtn.classList.add('bg-orange-600', 'hover:bg-orange-700');
-                } else {
-                    // Jika ada yang kosong, NONAKTIFKAN tombol
-                    submitBtn.disabled = true;
-                    submitBtn.classList.remove('bg-orange-600', 'hover:bg-orange-700');
-                    submitBtn.classList.add('bg-gray-400', 'cursor-not-allowed', 'hover:bg-gray-400');
-                }
-            };
-
-            // Tambahkan event listener 'input' (untuk text) atau 'change' (untuk select) ke setiap field
-            formInputs.forEach(input => {
-                const eventType = (input.tagName.toLowerCase() === 'select') ? 'change' : 'input';
-                input.addEventListener(eventType, checkFormValidity);
-            });
-            
-            // Panggil fungsi saat pertama kali load untuk set state awal tombol (disabled)
-            checkFormValidity();
-            // --- AKHIR VALIDASI FORM ---
-
-            const openModal = () => {
-                if (isDataSubmitted) return; // Jangan buka modal jika data sudah disubmit
-                modal.classList.remove('hidden');
-            };
-
-            const closeModal = () => {
-                modal.classList.add('hidden');
-            };
-
-            // Handler untuk trigger modal (agar bisa di-remove)
-            const openModalHandler = (e) => {
-                if (e) e.preventDefault();
-                openModal();
-            };
-
-            // Event listener untuk membuka modal
-            triggerPembahasan.addEventListener('click', openModalHandler);
-            triggerProvinsi.addEventListener('click', openModalHandler);
-            triggerKabKota.addEventListener('click', openModalHandler);
-            loginBtn.addEventListener('click', openModalHandler); // <-- DITAMBAHKAN
-
-            // Event listener untuk menutup modal
-            closeModalBtn.addEventListener('click', closeModal);
-            modalOverlay.addEventListener('click', closeModal);
-
-            // --- Fungsi untuk Meng-unlock Fitur ---
-            const unlockFeatures = () => {
-                isDataSubmitted = true; // Tandai bahwa data sudah masuk
-
-                // 1. Unlock Pembahasan
-                pembahasanKonten.classList.remove('blur-sm', 'select-none', 'pointer-events-none');
-                if (pembahasanLock) {
-                    pembahasanLock.remove(); // Hapus overlay gembok
-                }
-                triggerPembahasan.removeEventListener('click', openModalHandler);
-                triggerPembahasan.href = '#pembahasan-unlocked'; // Ganti dengan link pembahasan asli
-                triggerPembahasan.style.cursor = 'default';
-
-                // 2. Unlock Tombol Provinsi
-                triggerProvinsi.innerHTML = userProvinsi; // Ganti teks tombol
-                triggerProvinsi.classList.remove('bg-gray-100', 'text-gray-500');
-                triggerProvinsi.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-                triggerProvinsi.removeEventListener('click', openModalHandler);
-                
-                // 3. Unlock Tombol Kab/Kota
-                triggerKabKota.innerHTML = userKabupaten; // Ganti teks tombol
-                triggerKabKota.classList.remove('bg-gray-100', 'text-gray-500');
-                triggerKabKota.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-                triggerKabKota.removeEventListener('click', openModalHandler);
-
-                // 4. Update Header (Login -> Nama User) <-- DITAMBAHKAN
-                loginBtn.classList.add('hidden');
-                userNameDisplay.textContent = `Halo, ${userNama}!`;
-                userNameDisplay.classList.remove('hidden');
-            };
-
-            // --- Fungsi untuk Mengganti Tombol Aktif ---
-            const setActiveButton = (activeBtn) => {
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('bg-orange-600', 'text-white');
-                    // Tambahkan style non-aktif (abu-abu) jika BUKAN tombol nasional
-                    if (btn.id !== 'filterNasional') {
-                        btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-                    }
-                });
-                // Set style aktif (oranye)
-                activeBtn.classList.add('bg-orange-600', 'text-white');
-                activeBtn.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-            };
-
-            // --- Fungsi untuk (Mock) Filter Data ---
-            // Di aplikasi nyata, ini akan memanggil API dengan parameter filter
-            const filterPeringkat = (scope) => {
-                let mockHtml = '';
-                
-                // Ambil baris user (untuk ditampilkan di mock data)
-                const userRow = `<tr class="border-b border-gray-100 bg-orange-50">
-                                <td class="p-4 text-orange-700 font-medium">#?</td>
-                                <td class="p-4 text-orange-700 font-medium">(Nama Peserta Anda)</td>
-                                <td class="p-4 font-bold text-orange-700 text-right">80</td>
-                              </tr>`;
-                
-                switch (scope) {
-                    case 'nasional':
-                        setActiveButton(filterNasional);
-                        mockHtml = `
-                            <tr class="border-b border-gray-100"><td class="p-4 text-gray-800 font-medium">#1</td><td class="p-4 text-gray-800">MuhXXXXX BaXXXX (Nasional)</td><td class="p-4 font-bold text-gray-900 text-right">95</td></tr>
-                            <tr class="border-b border-gray-100"><td class="p-4 text-gray-800 font-medium">#2</td><td class="p-4 text-gray-800">AniXXXX SuXXXX (Nasional)</td><td class="p-4 font-bold text-gray-900 text-right">92</td></tr>
-                            ${userRow.replace('#?', '#120')}
-                        `;
-                        break;
-                    case 'provinsi':
-                        if (!isDataSubmitted) return; // Jangan lakukan apa-apa jika data belum ada
-                        setActiveButton(triggerProvinsi);
-                        mockHtml = `
-                            <tr class="border-b border-gray-100"><td class="p-4 text-gray-800 font-medium">#1 Prov</td><td class="p-4 text-gray-800">Peserta A dari ${userProvinsi}</td><td class="p-4 font-bold text-gray-900 text-right">90</td></tr>
-                            ${userRow.replace('#?', '#15')}
-                            <tr class="border-b border-gray-100"><td class="p-4 text-gray-800 font-medium">#16 Prov</td><td class="p-4 text-gray-800">Peserta B dari ${userProvinsi}</td><td class="p-4 font-bold text-gray-900 text-right">79</td></tr>
-                        `;
-                        break;
-                    case 'kabupaten':
-                        if (!isDataSubmitted) return; // Jangan lakukan apa-apa jika data belum ada
-                        setActiveButton(triggerKabKota);
-                        mockHtml = `
-                            <tr class="border-b border-gray-100"><td class="p-4 text-gray-800 font-medium">#1 Kab</td><td class="p-4 text-gray-800">Peserta X dari ${userKabupaten}</td><td class="p-4 font-bold text-gray-900 text-right">88</td></tr>
-                            <tr class="border-b border-gray-100"><td class="p-4 text-gray-800 font-medium">#2 Kab</td><td class="p-4 text-gray-800">Peserta Y dari ${userKabupaten}</td><td class="p-4 font-bold text-gray-900 text-right">85</td></tr>
-                            ${userRow.replace('#?', '#3')}
-                        `;
-                        break;
-                }
-                peringkatTbody.innerHTML = mockHtml;
-            };
-
-            // --- Tambahkan Event Listener untuk FILTER ---
-            filterNasional.addEventListener('click', () => filterPeringkat('nasional'));
-            triggerProvinsi.addEventListener('click', () => filterPeringkat('provinsi'));
-            triggerKabKota.addEventListener('click', () => filterPeringkat('kabupaten'));
-
-
-            // Event listener untuk form submission
-            leadsForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                if (submitBtn.disabled) return; 
-
-                // 1. Simpan data ke variabel global
-                userProvinsi = inputProvinsi.value;
-                userKabupaten = inputKabupaten.value;
-                userNama = inputNama.value; // <-- DITAMBAHKAN
-
-                // 2. Kirim data ke backend (seperti sebelumnya)
-                const formData = new FormData(leadsForm);
-                const data = Object.fromEntries(formData.entries());
-                console.log('Data Leads Terkumpul:', data);
-                
-                // 3. Tutup modal
-                closeModal();
-                
-                // 4. Buka Kunci Fitur
-                unlockFeatures();
-                
-                // 5. Tampilkan alert (opsional, bisa dihapus)
-                alert('Terima kasih! Fitur Pembahasan dan Filter Peringkat Regional kini terbuka.');
-            });
+        // Tutup modal jika klik di luar area konten
+        messageBox.addEventListener('click', function(e) {
+            if (e.target === messageBox) {
+                hideModal();
+            }
         });
     </script>
 
 </body>
 </html>
+
+
+
+
 
